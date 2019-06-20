@@ -27,6 +27,7 @@ import org.lovebing.reactnative.baidumap.uimanager.*;
 
 /**
  * Created by lovebing on 4/17/16.
+ * 修改某个bug，你猜猜是哪一个
  */
 public class BaiduMapPackage implements ReactPackage {
 
@@ -56,7 +57,9 @@ public class BaiduMapPackage implements ReactPackage {
 
     @MainThread
     protected void init(ReactApplicationContext reactContext) {
-        Looper.prepare();
+        if (Looper.myLooper()==null){
+            Looper.prepare();
+        }
         SDKInitializer.initialize(reactContext.getApplicationContext());
     }
 }

@@ -12,11 +12,11 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Animatable;
 import android.net.Uri;
-import android.support.annotation.Nullable;
+import androidx.annotation.Nullable;
 import android.util.AttributeSet;
 
 import android.view.View;
-import android.view.ViewGroup;
+
 import com.baidu.mapapi.map.*;
 import com.baidu.mapapi.model.LatLng;
 import com.facebook.common.references.CloseableReference;

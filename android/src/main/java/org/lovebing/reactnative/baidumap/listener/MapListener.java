@@ -1,13 +1,13 @@
 /**
  * Copyright (c) 2016-present, lovebing.org.
- *
+ * <p>
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
 
 package org.lovebing.reactnative.baidumap.listener;
 
-import androidx.annotation.Nullable;
+import android.support.annotation.Nullable;
 
 import com.baidu.mapapi.map.BaiduMap;
 import com.baidu.mapapi.map.MapPoi;
@@ -19,6 +19,7 @@ import com.facebook.react.bridge.Arguments;
 import com.facebook.react.bridge.ReactContext;
 import com.facebook.react.bridge.WritableMap;
 import com.facebook.react.uimanager.events.RCTEventEmitter;
+
 
 public class MapListener implements BaiduMap.OnMapStatusChangeListener,
         BaiduMap.OnMapLoadedCallback,

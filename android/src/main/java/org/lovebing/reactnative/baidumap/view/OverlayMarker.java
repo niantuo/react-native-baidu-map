@@ -1,6 +1,6 @@
 /**
  * Copyright (c) 2016-present, lovebing.org.
- *
+ * <p>
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
@@ -12,12 +12,15 @@ import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.drawable.Animatable;
 import android.net.Uri;
-import androidx.annotation.Nullable;
+import android.support.annotation.Nullable;
 import android.util.AttributeSet;
-
 import android.view.View;
 
-import com.baidu.mapapi.map.*;
+import com.baidu.mapapi.map.BaiduMap;
+import com.baidu.mapapi.map.BitmapDescriptor;
+import com.baidu.mapapi.map.BitmapDescriptorFactory;
+import com.baidu.mapapi.map.Marker;
+import com.baidu.mapapi.map.MarkerOptions;
 import com.baidu.mapapi.model.LatLng;
 import com.facebook.common.references.CloseableReference;
 import com.facebook.datasource.DataSource;
@@ -35,6 +38,7 @@ import com.facebook.imagepipeline.image.CloseableStaticBitmap;
 import com.facebook.imagepipeline.image.ImageInfo;
 import com.facebook.imagepipeline.request.ImageRequest;
 import com.facebook.imagepipeline.request.ImageRequestBuilder;
+
 import org.lovebing.reactnative.baidumap.R;
 
 public class OverlayMarker extends View implements OverlayView {
@@ -62,7 +66,7 @@ public class OverlayMarker extends View implements OverlayView {
                         imageReference = dataSource.getResult();
                         if (imageReference != null) {
                             CloseableImage image = imageReference.get();
-                            if (image != null && image instanceof CloseableStaticBitmap) {
+                            if (image instanceof CloseableStaticBitmap) {
                                 CloseableStaticBitmap closeableStaticBitmap = (CloseableStaticBitmap) image;
                                 Bitmap bitmap = closeableStaticBitmap.getUnderlyingBitmap();
                                 if (bitmap != null) {

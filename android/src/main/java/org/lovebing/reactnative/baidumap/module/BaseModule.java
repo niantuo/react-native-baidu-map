@@ -1,13 +1,14 @@
 /**
  * Copyright (c) 2016-present, lovebing.org.
- *
+ * <p>
  * This source code is licensed under the MIT license found in the
  * LICENSE file in the root directory of this source tree.
  */
 
 package org.lovebing.reactnative.baidumap.module;
 
-import androidx.annotation.Nullable;
+
+import android.support.annotation.Nullable;
 
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
@@ -31,7 +32,7 @@ abstract public class BaseModule extends ReactContextBaseJavaModule {
      * @param eventName
      * @param params
      */
-    protected void sendEvent(String eventName,@Nullable WritableMap params) {
+    protected void sendEvent(String eventName, @Nullable WritableMap params) {
         context
                 .getJSModule(DeviceEventManagerModule.RCTDeviceEventEmitter.class)
                 .emit(eventName, params);
